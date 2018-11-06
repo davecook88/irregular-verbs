@@ -1,32 +1,100 @@
 .App {
+  min-width: 50%;
+  min-height: 50%;
+  border: 1px solid black;
+}
+.App-header{
   text-align: center;
+    color:#0a5c89;
+    font-size: 1.5em;
+    max-width: 45em;
+    margin:auto;
+}
+.Board {
+    width:100%;
+    max-width: 62em;
+    flex-wrap: wrap;
+    margin:auto;
+}
+.SelectButton {
+    display: inline-flex;
+    font-size: 1em;
+    border:2px outset;
+    border-radius: 100%;
+    line-height: 1em;
+    margin: 0.5em;
+    padding:0.5em;
+}
+.Timer {
+    display: inline-flex;
+    margin:0.5em;
+}
+.answered {
+    background: #3da5d2 !important;
+}
+.points {
+    display: block;
+    font-size: 2em;
+    margin: 0em 1em;
+}
+.points-div {
+    display: inline-block;
+    width:20%;
+}
+.title {
+    font-size:2.5em;
+}
+.title-div{
+    display: inline-block;
+    width:40%;
+}
+.scene {
+    display: inline-flex;
+    width: 10em;
+    height: 6em;
+    perspective: 600px;
+    margin:1px
+}
+.select-div {
+    display: inline-block;
+    width:35%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border: 2px outset;
+    position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 3em;
   color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  backface-visibility: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.card__face--front {
+    background: #fff url("//static1.squarespace.com/static/500b7040e4b0e4a250259640/t/5b6b1f3b6d2a73ab9f688183/1541171636061/?format=1500w");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card__face--back {
+  background: #0a5c89;
+  transform: rotateY(180deg);
 }
